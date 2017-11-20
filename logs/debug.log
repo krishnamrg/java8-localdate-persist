@@ -1,0 +1,21 @@
+2017-11-20 16:48:49 - Starting App on PRINHYLTPHP0553 with PID 15260 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-20 16:48:49 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-20 16:48:49 - No active profile set, falling back to default profiles: default
+2017-11-20 16:48:54 - Started App in 6.491 seconds (JVM running for 7.487)
+2017-11-20 16:50:07 - Starting App on PRINHYLTPHP0553 with PID 15456 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-20 16:50:07 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-20 16:50:07 - No active profile set, falling back to default profiles: default
+2017-11-20 16:50:13 - Started App in 6.99 seconds (JVM running for 7.904)
+2017-11-20 16:50:24 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}
+2017-11-20 16:51:01 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}
+2017-11-20 16:54:53 - Starting App on PRINHYLTPHP0553 with PID 15930 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-20 16:54:53 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-20 16:54:53 - No active profile set, falling back to default profiles: default
+2017-11-20 16:55:00 - Started App in 7.144 seconds (JVM running for 8.106)
+2017-11-20 16:55:01 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}
+2017-11-20 16:58:16 - Starting App on PRINHYLTPHP0553 with PID 16451 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-20 16:58:16 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-20 16:58:16 - No active profile set, falling back to default profiles: default
+2017-11-20 16:58:22 - Started App in 7.395 seconds (JVM running for 8.469)
+2017-11-20 16:58:27 - select person0_.id as id1_0_0_, person0_.create_datetime as create_d2_0_0_, person0_.dob as dob3_0_0_, person0_.first_name as first_na4_0_0_, person0_.last_name as last_nam5_0_0_, person0_.modified_datetime as modified6_0_0_, person0_.version as version7_0_0_ from person person0_ where person0_.id=?
+2017-11-20 16:58:27 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}

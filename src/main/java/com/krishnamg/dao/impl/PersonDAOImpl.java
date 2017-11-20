@@ -1,5 +1,6 @@
-package com.krishnamg.dao;
+package com.krishnamg.dao.impl;
 
+import com.krishnamg.dao.PersonDAO;
 import com.krishnamg.model.Person;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -53,6 +54,7 @@ public class PersonDAOImpl implements PersonDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            LOGGER.debug("person found {}",person);
         }
         return person;
     }

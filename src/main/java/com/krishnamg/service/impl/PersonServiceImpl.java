@@ -1,7 +1,8 @@
-package com.krishnamg.service;
+package com.krishnamg.service.impl;
 
 import com.krishnamg.dao.PersonDAO;
 import com.krishnamg.model.Person;
+import com.krishnamg.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
