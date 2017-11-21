@@ -4,22 +4,31 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.krishnamg.model.Person;
 import com.krishnamg.service.PersonService;
+import dto.PersonDTO;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import util.Gender;
 
 /**
  * Created by krishnamg on 20/11/17.
  */
+@CrossOrigin(
+        origins = {"http://localhost:4200", "http://localhost:8080"},
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}
+)
 @RestController
 @RequestMapping(value = "/v1/person")
 public class PersonController {
@@ -27,13 +36,15 @@ public class PersonController {
     @Autowired
     PersonService personService;
 
-    @RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Person> sayHello(@PathVariable String name) {
-        Person person = defaultPerson(name);
-        return new ResponseEntity<>(person, HttpStatus.OK);
+    @Autowired
+    private Environment env;
+
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<List<PersonDTO>> getAll() {
+        return new ResponseEntity<>(personService.getAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<Person> create(@RequestBody String json) throws IOException {
         Person person = getPersonObject(getJsonNode(json));
         if (Objects.nonNull(person)) {
@@ -42,15 +53,15 @@ public class PersonController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Person> read(@PathVariable Long id) {
         if (Objects.nonNull(id)) {
-            return new ResponseEntity<>(personService.read(Long.valueOf(id)), HttpStatus.OK);
+            return new ResponseEntity<>(personService.get(Long.valueOf(id)), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(method = RequestMethod.PUT, produces = "application/json")
     public ResponseEntity<Person> update(@RequestBody String json) throws IOException {
         Person person = getPersonObject(getJsonNode(json));
         if (Objects.nonNull(person)) {
@@ -59,7 +70,7 @@ public class PersonController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "application/json")
     public ResponseEntity<Person> delete(@PathVariable String id) {
         if (Objects.nonNull(id)) {
             personService.delete(Long.valueOf(id));
@@ -68,22 +79,18 @@ public class PersonController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    private Person defaultPerson(@PathVariable String name) {
-        Person person = new Person();
-        person.setFirstName(name);
-        person.setDateOfBirth(LocalDate.now());
-        return person;
-    }
-
     private Person getPersonObject(JsonNode jsonNode) {
         Person person = new Person();
-        if(jsonNode.has("id")){
+        if (jsonNode.has("id")) {
             person.setId(jsonNode.get("id").asLong());
         }
         person.setFirstName(jsonNode.get("firstName").textValue());
         person.setLastName(jsonNode.get("lastName").textValue());
-        LocalDate dob = LocalDate.parse(jsonNode.get("dateOfBirth").textValue(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate dob = LocalDate
+                .parse(jsonNode.get("dob").textValue(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         person.setDateOfBirth(dob);
+        person.setEmail(jsonNode.get("email").textValue());
+        person.setGender(Gender.valueOf(jsonNode.get("gender").textValue()));
         return person;
     }
 

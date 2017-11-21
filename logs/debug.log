@@ -1,21 +1,250 @@
-2017-11-20 16:48:49 - Starting App on PRINHYLTPHP0553 with PID 15260 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
-2017-11-20 16:48:49 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
-2017-11-20 16:48:49 - No active profile set, falling back to default profiles: default
-2017-11-20 16:48:54 - Started App in 6.491 seconds (JVM running for 7.487)
-2017-11-20 16:50:07 - Starting App on PRINHYLTPHP0553 with PID 15456 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
-2017-11-20 16:50:07 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
-2017-11-20 16:50:07 - No active profile set, falling back to default profiles: default
-2017-11-20 16:50:13 - Started App in 6.99 seconds (JVM running for 7.904)
-2017-11-20 16:50:24 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}
-2017-11-20 16:51:01 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}
-2017-11-20 16:54:53 - Starting App on PRINHYLTPHP0553 with PID 15930 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
-2017-11-20 16:54:53 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
-2017-11-20 16:54:53 - No active profile set, falling back to default profiles: default
-2017-11-20 16:55:00 - Started App in 7.144 seconds (JVM running for 8.106)
-2017-11-20 16:55:01 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}
-2017-11-20 16:58:16 - Starting App on PRINHYLTPHP0553 with PID 16451 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
-2017-11-20 16:58:16 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
-2017-11-20 16:58:16 - No active profile set, falling back to default profiles: default
-2017-11-20 16:58:22 - Started App in 7.395 seconds (JVM running for 8.469)
-2017-11-20 16:58:27 - select person0_.id as id1_0_0_, person0_.create_datetime as create_d2_0_0_, person0_.dob as dob3_0_0_, person0_.first_name as first_na4_0_0_, person0_.last_name as last_nam5_0_0_, person0_.modified_datetime as modified6_0_0_, person0_.version as version7_0_0_ from person person0_ where person0_.id=?
-2017-11-20 16:58:27 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}
+2017-11-21 00:00:12 - Starting App on PRINHYLTPHP0553 with PID 21151 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 00:00:12 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 00:00:12 - No active profile set, falling back to default profiles: default
+2017-11-21 00:00:17 - Started App in 5.685 seconds (JVM running for 6.628)
+2017-11-21 00:00:20 - select person0_.id as id1_0_0_, person0_.create_datetime as create_d2_0_0_, person0_.dob as dob3_0_0_, person0_.first_name as first_na4_0_0_, person0_.last_name as last_nam5_0_0_, person0_.modified_datetime as modified6_0_0_, person0_.version as version7_0_0_ from person person0_ where person0_.id=?
+2017-11-21 00:00:25 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.TransactionRequiredException: no transaction is in progress] with root cause
+javax.persistence.TransactionRequiredException: no transaction is in progress
+	at org.hibernate.internal.SessionImpl.checkTransactionNeeded(SessionImpl.java:3467)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1427)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1423)
+	at com.krishnamg.dao.impl.PersonDAOImpl.update(PersonDAOImpl.java:75)
+	at com.krishnamg.service.impl.PersonServiceImpl.update(PersonServiceImpl.java:32)
+	at com.krishnamg.controllers.PersonController.update(PersonController.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-21 00:01:45 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.TransactionRequiredException: no transaction is in progress] with root cause
+javax.persistence.TransactionRequiredException: no transaction is in progress
+	at org.hibernate.internal.SessionImpl.checkTransactionNeeded(SessionImpl.java:3467)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1427)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1423)
+	at com.krishnamg.dao.impl.PersonDAOImpl.update(PersonDAOImpl.java:75)
+	at com.krishnamg.service.impl.PersonServiceImpl.update(PersonServiceImpl.java:32)
+	at com.krishnamg.controllers.PersonController.update(PersonController.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-21 00:02:46 - Starting App on PRINHYLTPHP0553 with PID 21654 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 00:02:46 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 00:02:46 - No active profile set, falling back to default profiles: default
+2017-11-21 00:02:51 - Started App in 5.838 seconds (JVM running for 6.87)
+2017-11-21 00:03:10 - select person0_.id as id1_0_0_, person0_.create_datetime as create_d2_0_0_, person0_.dob as dob3_0_0_, person0_.first_name as first_na4_0_0_, person0_.last_name as last_nam5_0_0_, person0_.modified_datetime as modified6_0_0_, person0_.version as version7_0_0_ from person person0_ where person0_.id=?
+2017-11-21 00:03:19 - update person set create_datetime=?, dob=?, first_name=?, last_name=?, modified_datetime=?, version=? where id=? and version=?
+2017-11-21 21:15:08 - Starting App on PRINHYLTPHP0553 with PID 29104 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 21:15:08 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 21:15:08 - No active profile set, falling back to default profiles: default
+2017-11-21 21:15:13 - Started App in 6.07 seconds (JVM running for 7.004)
+2017-11-21 21:15:54 - select person0_.id as id1_0_0_, person0_.create_datetime as create_d2_0_0_, person0_.dob as dob3_0_0_, person0_.email as email4_0_0_, person0_.first_name as first_na5_0_0_, person0_.gender as gender6_0_0_, person0_.last_name as last_nam7_0_0_, person0_.modified_datetime as modified8_0_0_, person0_.version as version9_0_0_ from person person0_ where person0_.id=?
+2017-11-21 21:15:55 - person found null
+2017-11-21 21:16:14 - person found null
+2017-11-21 21:17:04 - Starting App on PRINHYLTPHP0553 with PID 29548 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 21:17:04 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 21:17:04 - No active profile set, falling back to default profiles: default
+2017-11-21 21:17:09 - Started App in 5.233 seconds (JVM running for 5.869)
+2017-11-21 21:17:09 - select person0_.id as id1_0_0_, person0_.create_datetime as create_d2_0_0_, person0_.dob as dob3_0_0_, person0_.email as email4_0_0_, person0_.first_name as first_na5_0_0_, person0_.gender as gender6_0_0_, person0_.last_name as last_nam7_0_0_, person0_.modified_datetime as modified8_0_0_, person0_.version as version9_0_0_ from person person0_ where person0_.id=?
+2017-11-21 21:17:09 - person found Person{id=2, firstName='Mayank', lastName='Gangapuram', dateOfBirth=2015-06-21, createdDate=2017-11-20T15:59:19, modifiedDate=2017-11-20T16:32:01}
+2017-11-21 21:19:01 - select person0_.id as id1_0_0_, person0_.create_datetime as create_d2_0_0_, person0_.dob as dob3_0_0_, person0_.email as email4_0_0_, person0_.first_name as first_na5_0_0_, person0_.gender as gender6_0_0_, person0_.last_name as last_nam7_0_0_, person0_.modified_datetime as modified8_0_0_, person0_.version as version9_0_0_ from person person0_ where person0_.id=?
+2017-11-21 21:19:01 - update person set create_datetime=?, dob=?, email=?, first_name=?, gender=?, last_name=?, modified_datetime=?, version=? where id=? and version=?
+2017-11-21 21:21:37 - Starting App on PRINHYLTPHP0553 with PID 30236 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 21:21:37 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 21:21:37 - No active profile set, falling back to default profiles: default
+2017-11-21 21:21:42 - Started App in 5.321 seconds (JVM running for 5.998)
+2017-11-21 21:22:54 - select person0_.id as id1_0_0_, person0_.create_datetime as create_d2_0_0_, person0_.dob as dob3_0_0_, person0_.email as email4_0_0_, person0_.first_name as first_na5_0_0_, person0_.gender as gender6_0_0_, person0_.last_name as last_nam7_0_0_, person0_.modified_datetime as modified8_0_0_, person0_.version as version9_0_0_ from person person0_ where person0_.id=?
+2017-11-21 21:22:54 - update person set create_datetime=?, dob=?, email=?, first_name=?, gender=?, last_name=?, modified_datetime=?, version=? where id=? and version=?
+2017-11-21 21:23:25 - insert into person (create_datetime, dob, email, first_name, gender, last_name, modified_datetime, version) values (?, ?, ?, ?, ?, ?, ?, ?)
+2017-11-21 21:23:25 - person created Person{id=3, firstName='Krishnam Raj Goud', lastName='Gangapuram', email='krishnam.g@imaginea.com', gender=CONFIDENTIAL, dateOfBirth=2015-06-21, createdDate=2017-11-21T21:23:25.712, modifiedDate=2017-11-21T21:23:25.712, version=0}
+2017-11-21 21:24:16 - update person set create_datetime=?, dob=?, email=?, first_name=?, gender=?, last_name=?, modified_datetime=?, version=? where id=? and version=?
+2017-11-21 21:24:35 - update person set create_datetime=?, dob=?, email=?, first_name=?, gender=?, last_name=?, modified_datetime=?, version=? where id=? and version=?
+2017-11-21 21:25:51 - insert into person (create_datetime, dob, email, first_name, gender, last_name, modified_datetime, version) values (?, ?, ?, ?, ?, ?, ?, ?)
+2017-11-21 21:25:51 - person created Person{id=4, firstName='Soujanya', lastName='Gangapuram', email='soujanya121@gmail.com', gender=FEMALE, dateOfBirth=1993-01-21, createdDate=2017-11-21T21:25:51.004, modifiedDate=2017-11-21T21:25:51.004, version=0}
+2017-11-21 22:09:13 - Starting App on PRINHYLTPHP0553 with PID 5900 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 22:09:13 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 22:09:13 - No active profile set, falling back to default profiles: default
+2017-11-21 22:09:18 - Started App in 5.494 seconds (JVM running for 6.077)
+2017-11-21 22:10:05 - Starting App on PRINHYLTPHP0553 with PID 6105 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 22:10:05 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 22:10:05 - No active profile set, falling back to default profiles: default
+2017-11-21 22:10:09 - Started App in 4.947 seconds (JVM running for 5.614)
+2017-11-21 22:10:45 - Starting App on PRINHYLTPHP0553 with PID 6250 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 22:10:45 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 22:10:45 - No active profile set, falling back to default profiles: default
+2017-11-21 22:10:49 - Started App in 4.967 seconds (JVM running for 5.614)
+2017-11-21 22:10:56 - select * from person
+2017-11-21 22:10:56 - 4 persons found
+2017-11-21 22:14:12 - Starting App on PRINHYLTPHP0553 with PID 6767 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 22:14:12 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 22:14:12 - No active profile set, falling back to default profiles: default
+2017-11-21 22:14:17 - Started App in 5.188 seconds (JVM running for 5.817)
+2017-11-21 22:14:18 - select * from person
+2017-11-21 22:14:18 - 4 persons found
+2017-11-21 22:14:21 - select * from person
+2017-11-21 22:14:21 - 4 persons found
+2017-11-21 22:14:22 - select * from person
+2017-11-21 22:14:22 - 4 persons found
+2017-11-21 22:14:22 - select * from person
+2017-11-21 22:14:22 - 4 persons found
+2017-11-21 22:14:22 - select * from person
+2017-11-21 22:14:22 - 4 persons found
+2017-11-21 22:14:23 - select * from person
+2017-11-21 22:14:23 - 4 persons found
+2017-11-21 22:18:09 - select * from person
+2017-11-21 22:18:09 - 4 persons found
+2017-11-21 22:18:15 - Starting App on PRINHYLTPHP0553 with PID 7435 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 22:18:15 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 22:18:15 - No active profile set, falling back to default profiles: default
+2017-11-21 22:18:23 - Starting App on PRINHYLTPHP0553 with PID 7509 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 22:18:23 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 22:18:23 - No active profile set, falling back to default profiles: default
+2017-11-21 22:18:28 - Started App in 5.366 seconds (JVM running for 7.02)
+2017-11-21 22:19:24 - 0 persons found
+2017-11-21 22:19:29 - Starting App on PRINHYLTPHP0553 with PID 7706 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 22:19:29 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 22:19:29 - No active profile set, falling back to default profiles: default
+2017-11-21 22:19:34 - Started App in 5.743 seconds (JVM running for 6.617)
+2017-11-21 22:19:40 - select * from person
+2017-11-21 22:20:01 - select * from person
+2017-11-21 22:21:05 - select * from person
+2017-11-21 22:21:17 - select * from person
+2017-11-21 22:21:23 - select * from person
+2017-11-21 22:22:01 - select * from person
+2017-11-21 22:22:49 - select * from person
+2017-11-21 22:23:20 - select * from person
+2017-11-21 22:29:06 - select * from person
+2017-11-21 22:29:06 - 0 persons found
+2017-11-21 22:50:41 - Starting App on PRINHYLTPHP0553 with PID 13255 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 22:50:41 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 22:50:41 - No active profile set, falling back to default profiles: default
+2017-11-21 22:50:47 - Started App in 6.715 seconds (JVM running for 7.522)
+2017-11-21 22:51:13 - 4 persons found
+2017-11-21 23:15:27 - 4 persons found
+2017-11-21 23:15:28 - 4 persons found
+2017-11-21 23:16:22 - Starting App on PRINHYLTPHP0553 with PID 18220 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 23:16:22 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 23:16:22 - No active profile set, falling back to default profiles: default
+2017-11-21 23:16:28 - Started App in 6.023 seconds (JVM running for 6.657)
+2017-11-21 23:16:30 - 4 persons found
+2017-11-21 23:16:36 - 4 persons found
+2017-11-21 23:17:30 - 4 persons found
+2017-11-21 23:17:39 - 4 persons found
+2017-11-21 23:18:31 - 4 persons found
+2017-11-21 23:24:41 - Starting App on PRINHYLTPHP0553 with PID 19763 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 23:24:41 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 23:24:41 - No active profile set, falling back to default profiles: default
+2017-11-21 23:24:46 - Started App in 5.563 seconds (JVM running for 6.149)
+2017-11-21 23:25:30 - Starting App on PRINHYLTPHP0553 with PID 19969 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 23:25:30 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 23:25:30 - No active profile set, falling back to default profiles: default
+2017-11-21 23:25:35 - Started App in 5.815 seconds (JVM running for 6.437)
+2017-11-21 23:25:46 - Starting App on PRINHYLTPHP0553 with PID 20073 (/home/krishnamraju/krishnamg/spring/java8-localdate-persist/target/classes started by krishnamraju in /home/krishnamraju/krishnamg/spring/java8-localdate-persist)
+2017-11-21 23:25:46 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
+2017-11-21 23:25:46 - No active profile set, falling back to default profiles: default
+2017-11-21 23:25:51 - Started App in 5.61 seconds (JVM running for 6.287)
+2017-11-21 23:25:53 - 4 persons found
+2017-11-21 23:27:14 - 4 persons found
+2017-11-21 23:28:05 - 4 persons found
+2017-11-21 23:28:41 - 4 persons found
+2017-11-21 23:28:46 - 4 persons found
+2017-11-21 23:28:49 - 4 persons found

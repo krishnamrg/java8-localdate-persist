@@ -1,20 +1,24 @@
 package com.krishnamg.service;
 
 import com.krishnamg.model.Person;
+import dto.PersonDTO;
+import java.util.List;
 
 /**
  * Created by krishnamg on 13/11/17.
  */
- public interface PersonService {
+public interface PersonService {
 
-     Person create(Person person);
+    List<PersonDTO> getAll();
 
-     Person read(Long id);
+    Person create(Person person);
 
-     Person update(Person person);
+    Person get(Long id);
 
-     void delete(Long id);
+    Person update(Person person);
 
-     void close();
+    void delete(Long id);
+
+    void close();
 
 }

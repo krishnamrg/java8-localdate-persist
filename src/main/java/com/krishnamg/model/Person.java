@@ -8,12 +8,15 @@ import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 import listeners.EntityEventListener;
 import lombok.NonNull;
+import util.Gender;
 
 /**
  * Created by krishnamg on 13/11/17.
@@ -33,6 +36,13 @@ public class Person implements Serializable {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     // As of Hibernate 5.2 LocalDate is automatically mapped to sql type Date
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -84,6 +94,22 @@ public class Person implements Serializable {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     public LocalDateTime getCreatedDate() {
         return createdDate;
     }
@@ -106,9 +132,12 @@ public class Person implements Serializable {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", gender=" + gender +
                 ", dateOfBirth=" + dateOfBirth +
                 ", createdDate=" + createdDate +
                 ", modifiedDate=" + modifiedDate +
+                ", version=" + version +
                 '}';
     }
 }
